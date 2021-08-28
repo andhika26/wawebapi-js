@@ -189,9 +189,7 @@ app.post('/send-media', async (req, res) => {
 
   const media = new MessageMedia(mimetype, attachment, 'Media');
 
-  client.sendMessage(number, media, {
-    caption: caption
-  }).then(response => {
+  client.sendMessage(number, media, { caption: caption }).then(response => {
     res.status(200).json({
       status: true,
       response: response
